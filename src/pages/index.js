@@ -24,6 +24,7 @@ import SalesByCountries from 'src/views/dashboard/SalesByCountries'
 import axios from 'axios'
 import Vehicle_data from 'src/views/dashboard/Vehicle_data'
 import React, { useEffect } from 'react'
+import Link from 'next/link'
 
 const Dashboard = ({ data }) => {
 
@@ -49,7 +50,8 @@ const Dashboard = ({ data }) => {
           .catch(error => console.log("error", error))
       }, 3000);
       return () => clearInterval(interval);
-    }}, [Vehicle])
+    }
+  }, [Vehicle])
 
 
   const handleChangeOfInputData = async (event) => {
@@ -89,7 +91,12 @@ const Dashboard = ({ data }) => {
     <ApexChartWrapper>
       <Grid container spacing={6}>
         <Grid item xs={12} md={12}>
-          <h1 className='text-2xl font-medium mb-6'>Select the vehicle</h1>
+          <div className='flex justify-between'>
+            <h1 className='text-2xl font-medium mb-6'>Select the vehicle</h1>
+            <Link href='/GeoFensing'>
+              <button className='bg-gray-500 text-white p-2 m-2'>Go To GeoFencing</button>
+            </Link>
+          </div>
           <Vehicle_data data={data} Vehicle={Vehicle} handleChangeOfInputData={handleChangeOfInputData} />
         </Grid>
         <Grid item xs={12} md={4}>
@@ -155,10 +162,10 @@ const Dashboard = ({ data }) => {
         </Grid> */}
         {/* <Grid item xs={12} md={12} lg={8}>
           <DepositWithdraw />
-        </Grid>
-        <Grid item xs={12}>
-          <Table />
         </Grid> */}
+         <Grid item xs={12}>
+           <Table />
+         </Grid>
       </Grid>
     </ApexChartWrapper>
   )

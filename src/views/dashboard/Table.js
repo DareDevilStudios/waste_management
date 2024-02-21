@@ -12,76 +12,277 @@ import TableContainer from '@mui/material/TableContainer'
 
 const rows = [
   {
-    age: 27,
-    status: 'current',
-    date: '09/27/2018',
-    name: 'Sally Quinn',
-    salary: '•••',
-    email: 'eebsworth2m@sbwire.com',
-    designation: 'Driver: +918089770478'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 2,
+      "name": "City Route",
+      "model": "Tata 912 LPK Tipperr",
+      "registration_number": "KL 05 AA 8009",
+      "actual_route": {
+        "a": [
+          12.913,
+          77.614
+        ],
+        "b": [
+          13.913,
+          78.614
+        ],
+        "c": [
+          14.91,
+          79.614
+        ],
+        "d": [
+          14.11,
+          79.3143
+        ],
+        "e": [
+          14.913,
+          79.414
+        ]
+      },
+      "organization": 1
+    },
+    "geofence": {
+      "id": 1,
+      "name": "milk farm route",
+      "geometry": {
+        "east": 77.61538987770996,
+        "west": 77.61006692543947,
+        "north": 12.915682417744584,
+        "south": 12.911075841324305
+      },
+      "Vehicle_id": 2
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   },
   {
-    age: 61,
-    date: '09/23/2016',
-    salary: '•••',
-    status: 'professional',
-    name: 'Margaret Bowers',
-    email: 'kocrevy0@thetimes.co.uk',
-    designation: 'Driver: +919746108705'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 4,
+      "name": "GreenClean 2000",
+      "model": "GarboMaster 5000",
+      "registration_number": "WC-1234",
+      "actual_route": {},
+      "organization": 1
+    },
+    "geofence": {
+      "id": 2,
+      "name": "milk society route",
+      "geometry": {
+        "east": 77.61204528085936,
+        "west": 77.62440489999999,
+        "north": 12.9234621,
+        "south": 12.9334621
+      },
+      "Vehicle_id": 4
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   },
   {
-    age: 59,
-    date: '10/15/2017',
-    name: 'Minnie Roy',
-    status: 'rejected',
-    salary: '•••',
-    email: 'ediehn6@163.com',
-    designation: 'Cleaner: +91808977461'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 4,
+      "name": "GreenClean 2000",
+      "model": "GarboMaster 5000",
+      "registration_number": "WC-1234",
+      "actual_route": {},
+      "organization": 1
+    },
+    "geofence": {
+      "id": 2,
+      "name": "milk society route",
+      "geometry": {
+        "east": 77.61204528085936,
+        "west": 77.62440489999999,
+        "north": 12.9234621,
+        "south": 12.9334621
+      },
+      "Vehicle_id": 4
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   },
   {
-    age: 30,
-    date: '06/12/2018',
-    status: 'resigned',
-    salary: '•••',
-    name: 'Ralph Leonard',
-    email: 'dfalloona@ifeng.com',
-    designation: 'Driver: +919746108333'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 2,
+      "name": "City Route",
+      "model": "Tata 912 LPK Tipperr",
+      "registration_number": "KL 05 AA 8009",
+      "actual_route": {
+        "a": [
+          12.913,
+          77.614
+        ],
+        "b": [
+          13.913,
+          78.614
+        ],
+        "c": [
+          14.91,
+          79.614
+        ],
+        "d": [
+          14.11,
+          79.3143
+        ],
+        "e": [
+          14.913,
+          79.414
+        ]
+      },
+      "organization": 1
+    },
+    "geofence": {
+      "id": 1,
+      "name": "milk farm route",
+      "geometry": {
+        "east": 77.61538987770996,
+        "west": 77.61006692543947,
+        "north": 12.915682417744584,
+        "south": 12.911075841324305
+      },
+      "Vehicle_id": 2
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   },
   {
-    age: 66,
-    status: 'applied',
-    date: '03/24/2018',
-    salary: '•••',
-    name: 'Annie Martin',
-    designation: 'Driver: +91974619995',
-    email: 'sganderton2@tuttocitta.it'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 2,
+      "name": "City Route",
+      "model": "Tata 912 LPK Tipperr",
+      "registration_number": "KL 05 AA 8009",
+      "actual_route": {
+        "a": [
+          12.913,
+          77.614
+        ],
+        "b": [
+          13.913,
+          78.614
+        ],
+        "c": [
+          14.91,
+          79.614
+        ],
+        "d": [
+          14.11,
+          79.3143
+        ],
+        "e": [
+          14.913,
+          79.414
+        ]
+      },
+      "organization": 1
+    },
+    "geofence": {
+      "id": 1,
+      "name": "milk farm route",
+      "geometry": {
+        "east": 77.61538987770996,
+        "west": 77.61006692543947,
+        "north": 12.915682417744584,
+        "south": 12.911075841324305
+      },
+      "Vehicle_id": 2
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   },
   {
-    age: 33,
-    date: '08/25/2017',
-    salary: '•••',
-    name: 'Adeline Day',
-    status: 'professional',
-    email: 'hnisius4@gnu.org',
-    designation: 'Driver: +919723408705'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 2,
+      "name": "City Route",
+      "model": "Tata 912 LPK Tipperr",
+      "registration_number": "KL 05 AA 8009",
+      "actual_route": {
+        "a": [
+          12.913,
+          77.614
+        ],
+        "b": [
+          13.913,
+          78.614
+        ],
+        "c": [
+          14.91,
+          79.614
+        ],
+        "d": [
+          14.11,
+          79.3143
+        ],
+        "e": [
+          14.913,
+          79.414
+        ]
+      },
+      "organization": 1
+    },
+    "geofence": {
+      "id": 1,
+      "name": "milk farm route",
+      "geometry": {
+        "east": 77.61538987770996,
+        "west": 77.61006692543947,
+        "north": 12.915682417744584,
+        "south": 12.911075841324305
+      },
+      "Vehicle_id": 2
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   },
   {
-    age: 61,
-    status: 'current',
-    date: '06/01/2017',
-    salary: '•••',
-    name: 'Lora Jackson',
-    designation: 'Driver: +91974611115',
-    email: 'ghoneywood5@narod.ru'
-  },
-  {
-    age: 22,
-    date: '12/03/2017',
-    salary: '•••',
-    name: 'Rodney Sharp',
-    status: 'professional',
-    designation: 'Accountant: +91974633422',
-    email: 'dcrossman3@google.co.jp'
+    "type": "GEOFENCE_BREACH",
+    "vehicle": {
+      "id": 2,
+      "name": "City Route",
+      "model": "Tata 912 LPK Tipperr",
+      "registration_number": "KL 05 AA 8009",
+      "actual_route": {
+        "a": [
+          12.913,
+          77.614
+        ],
+        "b": [
+          13.913,
+          78.614
+        ],
+        "c": [
+          14.91,
+          79.614
+        ],
+        "d": [
+          14.11,
+          79.3143
+        ],
+        "e": [
+          14.913,
+          79.414
+        ]
+      },
+      "organization": 1
+    },
+    "geofence": {
+      "id": 1,
+      "name": "milk farm route",
+      "geometry": {
+        "east": 77.61538987770996,
+        "west": 77.61006692543947,
+        "north": 12.915682417744584,
+        "south": 12.911075841324305
+      },
+      "Vehicle_id": 2
+    },
+    "message": "Vehicle is outside the geofence",
+    "action": null
   }
 ]
 
@@ -100,28 +301,37 @@ const DashboardTable = () => {
         <Table sx={{ minWidth: 800 }} aria-label='table in dashboard'>
           <TableHead>
             <TableRow>
+              <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Date</TableCell>
-              <TableCell>Salary</TableCell>
+              <TableCell>message</TableCell>
+              {/* <TableCell>Salary</TableCell>
               <TableCell>Age</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell>Status</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map(row => (
-              <TableRow hover key={row.name} sx={{ '&:last-of-type td, &:last-of-type th': { border: 0 } }}>
+              <TableRow hover key={row.vehicle.id} sx={{ '&:last-of-type td, &:last-of-type th': { border: 0 } }}>
                 <TableCell sx={{ py: theme => `${theme.spacing(0.5)} !important` }}>
                   <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <Typography sx={{ fontWeight: 500, fontSize: '0.875rem !important' }}>{row.name}</Typography>
-                    <Typography variant='caption'>{row.designation}</Typography>
+                    <Typography sx={{ fontWeight: 500, fontSize: '0.875rem !important' }}>{row.vehicle.id}</Typography>
                   </Box>
                 </TableCell>
-                <TableCell>{row.email}</TableCell>
+                <TableCell sx={{ py: theme => `${theme.spacing(0.5)} !important` }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <Typography sx={{ fontWeight: 500, fontSize: '0.875rem !important' }}>{row.vehicle.name}</Typography>
+                  </Box>
+                </TableCell>
+                <TableCell sx={{ py: theme => `${theme.spacing(0.5)} !important` }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <Typography sx={{ fontWeight: 500, fontSize: '0.875rem !important' }}>{row.message}</Typography>
+                  </Box>
+                </TableCell>
+                {/* <TableCell>{row.email}</TableCell>
                 <TableCell>{row.date}</TableCell>
                 <TableCell>{row.salary}</TableCell>
-                <TableCell>{row.age}</TableCell>
-                <TableCell>
+                <TableCell>{row.age}</TableCell> */}
+                {/* <TableCell>
                   <Chip
                     label={row.status}
                     color={statusObj[row.status].color}
@@ -132,7 +342,7 @@ const DashboardTable = () => {
                       '& .MuiChip-label': { fontWeight: 500 }
                     }}
                   />
-                </TableCell>
+                </TableCell> */}
               </TableRow>
             ))}
           </TableBody>
