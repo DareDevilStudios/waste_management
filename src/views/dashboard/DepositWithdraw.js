@@ -11,41 +11,41 @@ const depositData = [
   {
     logoWidth: 28,
     logoHeight: 29,
-    amount: '+$4,650',
+    amount: '4,650 hrs',
     subtitle: 'Sell UI Kit',
-    title: 'Gumroad Account',
+    title: 'Driver: Sam MK',
     logo: '/images/logos/gumroad.png'
   },
   {
     logoWidth: 38,
     logoHeight: 38,
-    amount: '+$92,705',
-    title: 'Mastercard',
-    subtitle: 'Wallet deposit',
+    amount: '1,250 hrs',
+    title: 'Kiran Desai',
+    subtitle: 'Kiran Cloths',
     logo: '/images/logos/mastercard-label.png'
   },
   {
     logoWidth: 20,
     logoHeight: 28,
-    amount: '+$957',
-    title: 'Stripe Account',
-    subtitle: 'iOS Application',
+    amount: '2,101 hrs',
+    title: 'Aravind Adiga',
+    subtitle: 'Client 1',
     logo: '/images/logos/stripe.png'
   },
   {
     logoWidth: 34,
     logoHeight: 32,
-    amount: '+$6,837',
-    title: 'American Bank',
-    subtitle: 'Bank Transfer',
+    amount:'250 hrs',
+    title: 'Mulk Raj Anand',
+    subtitle: 'Client 2',
     logo: '/images/logos/american-bank.png'
   },
   {
     logoWidth: 33,
     logoHeight: 22,
-    amount: '+$446',
-    title: 'Bank Account',
-    subtitle: 'Wallet deposit',
+    amount: '1,050 hrs',
+    title: 'Jhumpa Lahiri',
+    subtitle: 'Seafood',
     logo: '/images/logos/citi-bank.png'
   }
 ]
@@ -54,25 +54,25 @@ const withdrawData = [
   {
     logoWidth: 29,
     logoHeight: 30,
-    amount: '-$145',
-    title: 'Google Adsense',
-    subtitle: 'Paypal deposit',
+    amount: '-145',
+    title: 'Ahmedabad Toll Plaza',
+    subtitle: 'Client 2',
     logo: '/images/logos/google.png'
   },
   {
     logoWidth: 34,
     logoHeight: 34,
     amount: '-$1870',
-    title: 'Github Enterprise',
+    title: 'Nadiad Toll Plaza',
     logo: '/images/logos/github.png',
-    subtitle: 'Security & compliance'
+    subtitle: 'Client 3'
   },
   {
     logoWidth: 30,
     logoHeight: 30,
     amount: '-$450',
-    title: 'Upgrade Slack Plan',
-    subtitle: 'Debit card deposit',
+    title: 'Chillakallu',
+    subtitle: 'Seafood',
     logo: '/images/logos/slack.png'
   },
   {
@@ -80,16 +80,16 @@ const withdrawData = [
     logoHeight: 30,
     amount: '-$540',
     title: 'Digital Ocean',
-    subtitle: 'Cloud Hosting',
+    subtitle: 'Yash Delivery',
     logo: '/images/logos/digital-ocean.png'
   },
   {
     logoWidth: 36,
     logoHeight: 21,
     amount: '-$21',
-    title: 'AWS Account',
+    title: 'Vikkravandi Toll Plaza',
     logo: '/images/logos/aws.png',
-    subtitle: 'Choosing a Cloud Platform'
+    subtitle: 'Fleet 3'
   }
 ]
 
@@ -109,7 +109,7 @@ const DepositWithdraw = () => {
     <Card sx={{ display: 'flex', justifyContent: 'space-between', flexDirection: ['column', 'column', 'row'] }}>
       <Box sx={{ width: '100%' }}>
         <CardHeader
-          title='Deposit'
+          title='On Route Time'
           sx={{ pt: 5.5, alignItems: 'center', '& .MuiCardHeader-action': { mt: 0.6 } }}
           action={<Typography variant='caption'>View All</Typography>}
           titleTypographyProps={{
@@ -155,7 +155,7 @@ const DepositWithdraw = () => {
 
       <Box sx={{ width: '100%' }}>
         <CardHeader
-          title='Withdraw'
+          title='Toll Amount'
           sx={{ pt: 5.5, alignItems: 'center', '& .MuiCardHeader-action': { mt: 0.6 } }}
           action={<Typography variant='caption'>View All</Typography>}
           titleTypographyProps={{
