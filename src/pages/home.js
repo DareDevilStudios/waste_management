@@ -23,33 +23,13 @@ import DepositWithdraw from 'src/views/dashboard/DepositWithdraw'
 import SalesByCountries from 'src/views/dashboard/SalesByCountries'
 import axios from 'axios'
 import Vehicle_data from 'src/views/dashboard/Vehicle_data'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const Dashboard = ({ data }) => {
 
   const [Vehicle, setVehicle] = React.useState('')
   const [responseData, setResponseData] = React.useState('')
   const [boundary, setBoundary] = React.useState('')
-
-  // using the useEffect function when the value of Vehicle is > 0 and != null the after each 5 minutes the data should be sent to api /api/track_update
-  useEffect(() => {
-    if (Vehicle > 0 && Vehicle != null) {
-      console.log("Vehicle", Vehicle)
-      const interval = setInterval(() => {
-        axios.post(`/api/track_update`, {
-          headers: {
-            'accept': 'application/json',
-          },
-          // add the data to the body
-          body: JSON.stringify({ Vehicle_id: Vehicle })
-        })
-          .then(responseData => {
-            console.log("responseData track", responseData)
-          })
-          .catch(error => console.log("error", error))
-      }, 3000);
-      return () => clearInterval(interval);
-    }}, [Vehicle])
 
 
   const handleChangeOfInputData = async (event) => {
@@ -88,23 +68,23 @@ const Dashboard = ({ data }) => {
   return (
     <ApexChartWrapper>
       <Grid container spacing={6}>
-        <Grid item xs={12} md={12}>
+        {/* <Grid item xs={12} md={12}>
           <h1 className='text-2xl font-medium mb-6'>Select the vehicle</h1>
           <Vehicle_data data={data} Vehicle={Vehicle} handleChangeOfInputData={handleChangeOfInputData} />
-        </Grid>
-        <Grid item xs={12} md={4}>
+        </Grid>*/}
+        {/* <Grid item xs={12} md={4}>
           <Trophy responseData={responseData} />
-        </Grid>
-        <Grid item xs={12} md={8}>
-          <StatisticsCard responseData={responseData} />
-        </Grid>
-        {/* <Grid item xs={12} md={6} lg={4}>
-          <WeeklyOverview />
         </Grid> */}
+        {/* <Grid item xs={12} md={8}>
+          <StatisticsCard responseData={responseData} />
+        </Grid> */}
+        <Grid item xs={12} md={6} lg={4}>
+          <WeeklyOverview />
+        </Grid> 
         <Grid item xs={12} md={6} lg={4}>
           <TotalEarning boundaryData={boundary} />
         </Grid>
-        {/* <Grid item xs={12} md={6} lg={4}>
+       <Grid item xs={12} md={6} lg={4}>
           <Grid container spacing={6}>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
@@ -132,7 +112,7 @@ const Dashboard = ({ data }) => {
                 stats='862'
                 trend='negative'
                 trendNumber='-18%'
-                title='New Project'
+                title='New Delivery'
                 subtitle='Yearly Project'
                 icon={<BriefcaseVariantOutline />}
               />
@@ -144,21 +124,21 @@ const Dashboard = ({ data }) => {
                 trend='negative'
                 trendNumber='-18%'
                 subtitle='Last Week'
-                title='Sales Queries'
+                title='Idle Events'
                 icon={<HelpCircleOutline />}
               />
             </Grid>
-          </Grid> */}
-        {/* </Grid> */}
-        {/* <Grid item xs={12} md={6} lg={4}>
+          </Grid> 
+        </Grid> 
+        <Grid item xs={12} md={6} lg={4}>
           <SalesByCountries />
-        </Grid> */}
-        {/* <Grid item xs={12} md={12} lg={8}>
+        </Grid> 
+        <Grid item xs={12} md={12} lg={8}>
           <DepositWithdraw />
         </Grid>
         <Grid item xs={12}>
           <Table />
-        </Grid> */}
+        </Grid>
       </Grid>
     </ApexChartWrapper>
   )
