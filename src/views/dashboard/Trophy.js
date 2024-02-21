@@ -21,7 +21,7 @@ const TrophyImg = styled('img')({
   position: 'absolute'
 })
 
-const Trophy = ({responseData}) => {
+const Trophy = ({ responseData }) => {
   // ** Hook
   const theme = useTheme()
   const imageSrc = theme.palette.mode === 'light' ? 'triangle-light.png' : 'triangle-dark.png'
@@ -29,18 +29,18 @@ const Trophy = ({responseData}) => {
   return (
     <Card sx={{ position: 'relative' }}>
       <CardContent>
-        <Typography variant='h6'>{responseData?.data?.name}</Typography>
+        <Typography variant='h5'sx={{ my: 4, color: 'primary.main' }}>{responseData?.data?.name}</Typography>
         <Typography variant='body2' sx={{ letterSpacing: '0.25px' }}>
-          Best seller of the month
+          The vehicle is under organization : {responseData?.data?.organization}
         </Typography>
-        <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
-          $42.8k
+        <Typography variant='h6' sx={{ my: 4 }}>
+          Registration Number : <br></br>{responseData?.data?.registration_number}
         </Typography>
-        <Button size='small' variant='contained'>
+        {/* <Button size='small' variant='contained'>
           View Sales
-        </Button>
+        </Button> */}
         <TriangleImg alt='triangle background' src={`/images/misc/${imageSrc}`} />
-        <TrophyImg alt='trophy' src='/images/misc/trophy.png' />
+        {/* <TrophyImg alt='trophy' src='/images/misc/trophy.png' /> */}
       </CardContent>
     </Card>
   )

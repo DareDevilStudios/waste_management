@@ -54,11 +54,11 @@ const Dashboard = ({ data }) => {
     <ApexChartWrapper>
       <Grid container spacing={6}>
         <Grid item xs={12} md={12}>
+          <h1 className='text-2xl font-medium mb-6'>Select the vehicle</h1>
           <Vehicle_data data={data} Vehicle={Vehicle} handleChangeOfInputData={handleChangeOfInputData} />
         </Grid>
         <Grid item xs={12} md={4}>
-          <Trophy responseData={responseData} />
-          
+          <Trophy responseData={responseData} /> 
         </Grid>
         <Grid item xs={12} md={8}>
           <StatisticsCard />
