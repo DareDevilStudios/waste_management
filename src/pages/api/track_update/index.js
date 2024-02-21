@@ -29,7 +29,7 @@ export default async function handler(req, res) {
         "latitude": latitude.toString(),
         "longitude": longitude.toString(),
         "speed": Math.floor(Math.random() * 81).toString(),
-        "heading": 3.14.toString(),
+        "heading": 10,
         "vehicle": data.Vehicle_id,
     }
     console.log("data bounds : " + JSON.stringify(track_update_details))

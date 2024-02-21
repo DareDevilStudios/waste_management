@@ -156,8 +156,8 @@ const postRectangleBounds = () => {
   return (
     <div>
       <div id="map1" style={{ width: '100%', height: '400px' }}></div>
-      <button onClick={drawRectangle}>Draw Rectangle</button>
-      <button onClick={postRectangleBounds}>Post Rectangle Bounds</button>
+      <button className='bg-gray-500 text-white p-2 m-2' onClick={drawRectangle}>Draw Rectangle</button>
+      <button className='bg-gray-500 text-white p-2 m-2' onClick={postRectangleBounds}>Post Rectangle Bounds</button>
     </div>
   );
 };
