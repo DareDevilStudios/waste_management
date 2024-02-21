@@ -43,7 +43,7 @@ const GeoFencingMap = () => {
 
 
     // Fetch data from the server
-    axios.get('http://127.0.0.1:6565/gps/track/2/track-location')
+    axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/gps/track/2/track-location`)
     .then(response => {
       setCoordinates(response.data);
     })
@@ -141,7 +141,7 @@ const GeoFencingMap = () => {
 const postRectangleBounds = () => {
       console.log(rectangle.getBounds())
     if (rectangleBounds) {
-      axios.post('http://0.0.0.0:8000/save-geofencing', rectangleBounds)
+      axios.post(`/api/geofence_post`, rectangleBounds)
         .then(response => {
           console.log('Rectangle bounds sent successfully:', response.data);
         })

@@ -23,13 +23,33 @@ import DepositWithdraw from 'src/views/dashboard/DepositWithdraw'
 import SalesByCountries from 'src/views/dashboard/SalesByCountries'
 import axios from 'axios'
 import Vehicle_data from 'src/views/dashboard/Vehicle_data'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Dashboard = ({ data }) => {
 
   const [Vehicle, setVehicle] = React.useState('')
   const [responseData, setResponseData] = React.useState('')
   const [boundary, setBoundary] = React.useState('')
+
+  // using the useEffect function when the value of Vehicle is > 0 and != null the after each 5 minutes the data should be sent to api /api/track_update
+  useEffect(() => {
+    if (Vehicle > 0 && Vehicle != null) {
+      console.log("Vehicle", Vehicle)
+      const interval = setInterval(() => {
+        axios.post(`/api/track_update`, {
+          headers: {
+            'accept': 'application/json',
+          },
+          // add the data to the body
+          body: JSON.stringify({ Vehicle_id: Vehicle })
+        })
+          .then(responseData => {
+            console.log("responseData track", responseData)
+          })
+          .catch(error => console.log("error", error))
+      }, 3000);
+      return () => clearInterval(interval);
+    }}, [Vehicle])
 
 
   const handleChangeOfInputData = async (event) => {
