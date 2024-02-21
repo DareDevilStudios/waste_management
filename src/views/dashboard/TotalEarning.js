@@ -42,46 +42,46 @@ const data = [
   }
 ]
 
-const TotalEarning = () => {
-  return (
+const TotalEarning = ({boundaryData}) => {
+  return boundaryData && (
     <Card>
       <CardHeader
-        title='Total Earning'
+        title='Vehicle coverage area'
         titleTypographyProps={{ sx: { lineHeight: '1.6 !important', letterSpacing: '0.15px !important' } }}
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
+            {/* <DotsVertical /> */}
           </IconButton>
         }
       />
       <CardContent sx={{ pt: theme => `${theme.spacing(2.25)} !important` }}>
         <Box sx={{ mb: 1.5, display: 'flex', alignItems: 'center' }}>
           <Typography variant='h4' sx={{ fontWeight: 600, fontSize: '2.125rem !important' }}>
-            $24,895
+            {boundaryData.data.name}
           </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', color: 'success.main' }}>
+          {/* <Box sx={{ display: 'flex', alignItems: 'center', color: 'success.main' }}>
             <MenuUp sx={{ fontSize: '1.875rem', verticalAlign: 'middle' }} />
             <Typography variant='body2' sx={{ fontWeight: 600, color: 'success.main' }}>
               10%
             </Typography>
-          </Box>
+          </Box> */}
         </Box>
 
         <Typography component='p' variant='caption' sx={{ mb: 10 }}>
-          Compared to $84,325 last year
+          Geometry
         </Typography>
 
-        {data.map((item, index) => {
+        {Object.entries(boundaryData.data.geometry).map(([key, value]) => {
           return (
             <Box
-              key={item.title}
+              key={key}
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                ...(index !== data.length - 1 ? { mb: 8.5 } : {})
+                ...(key !== Object.keys(boundaryData.data.geometry)[Object.keys(boundaryData.data.geometry).length - 1] ? { mb: 8.5 } : {})
               }}
             >
-              <Avatar
+              {/* <Avatar
                 variant='rounded'
                 sx={{
                   mr: 3,
@@ -90,8 +90,8 @@ const TotalEarning = () => {
                   backgroundColor: theme => `rgba(${theme.palette.customColors.main}, 0.04)`
                 }}
               >
-                <img src={item.imgSrc} alt={item.title} height={item.imgHeight} />
-              </Avatar>
+                <img src={value.imgSrc} alt={value.title} height={value.imgHeight} />
+              </Avatar> */}
               <Box
                 sx={{
                   width: '100%',
@@ -103,16 +103,16 @@ const TotalEarning = () => {
               >
                 <Box sx={{ marginRight: 2, display: 'flex', flexDirection: 'column' }}>
                   <Typography variant='body2' sx={{ mb: 0.5, fontWeight: 600, color: 'text.primary' }}>
-                    {item.title}
+                    {key}
                   </Typography>
-                  <Typography variant='caption'>{item.subtitle}</Typography>
+                  {/* <Typography variant='caption'>{value.subtitle}</Typography> */}
                 </Box>
 
                 <Box sx={{ minWidth: 85, display: 'flex', flexDirection: 'column' }}>
                   <Typography variant='body2' sx={{ mb: 2, fontWeight: 600, color: 'text.primary' }}>
-                    {item.amount}
+                    {value}
                   </Typography>
-                  <LinearProgress color={item.color} value={item.progress} variant='determinate' />
+                  {/* <LinearProgress color={value.color} value={value.progress} variant='determinate' /> */}
                 </Box>
               </Box>
             </Box>

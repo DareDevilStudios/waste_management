@@ -29,6 +29,7 @@ const Dashboard = ({ data }) => {
 
   const [Vehicle, setVehicle] = React.useState('')
   const [responseData, setResponseData] = React.useState('')
+  const [boundary, setBoundary] = React.useState('')
 
 
   const handleChangeOfInputData = async (event) => {
@@ -40,12 +41,26 @@ const Dashboard = ({ data }) => {
         'X-CSRFToken': 'FtslYdAItKf5KltYFEgebZd5nghYSNRregvozx7Qe2xw3jNsOqSeIsCs7wgjcaSd'
       },
       // add the data to the body
-      body: JSON.stringify({id : event.target.value})
+      body: JSON.stringify({ id: event.target.value })
     })
       // fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/gps/add-vehicle/${event.target.value}`)
-      .then(responseData => {
+      .then(async (responseData) => {
         console.log("responseData", responseData)
         setResponseData(responseData)
+        await axios.post(`/api/vehicle_boundary`, {
+          headers: {
+            'accept': 'application/json',
+            'X-CSRFToken': 'FtslYdAItKf5KltYFEgebZd5nghYSNRregvozx7Qe2xw3jNsOqSeIsCs7wgjcaSd'
+          },
+          // add the data to the body
+          body: JSON.stringify({ id: event.target.value })
+        })
+          // fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/gps/geofence/${event.target.value}`)
+          .then(responseData2 => {
+            console.log("responseData of boundary", responseData2)
+            setBoundary(responseData2)
+          })
+          .catch(error => console.log("error", error))
       })
       .catch(error => console.log("error", error))
   }
@@ -58,18 +73,18 @@ const Dashboard = ({ data }) => {
           <Vehicle_data data={data} Vehicle={Vehicle} handleChangeOfInputData={handleChangeOfInputData} />
         </Grid>
         <Grid item xs={12} md={4}>
-          <Trophy responseData={responseData} /> 
+          <Trophy responseData={responseData} />
         </Grid>
         <Grid item xs={12} md={8}>
-          <StatisticsCard />
+          <StatisticsCard responseData={responseData} />
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        {/* <Grid item xs={12} md={6} lg={4}>
           <WeeklyOverview />
-        </Grid>
+        </Grid> */}
         <Grid item xs={12} md={6} lg={4}>
-          <TotalEarning />
+          <TotalEarning boundaryData={boundary} />
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        {/* <Grid item xs={12} md={6} lg={4}>
           <Grid container spacing={6}>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
@@ -113,17 +128,17 @@ const Dashboard = ({ data }) => {
                 icon={<HelpCircleOutline />}
               />
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+          </Grid> */}
+        {/* </Grid> */}
+        {/* <Grid item xs={12} md={6} lg={4}>
           <SalesByCountries />
-        </Grid>
-        <Grid item xs={12} md={12} lg={8}>
+        </Grid> */}
+        {/* <Grid item xs={12} md={12} lg={8}>
           <DepositWithdraw />
         </Grid>
         <Grid item xs={12}>
           <Table />
-        </Grid>
+        </Grid> */}
       </Grid>
     </ApexChartWrapper>
   )

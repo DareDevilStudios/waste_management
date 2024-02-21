@@ -42,48 +42,87 @@ const salesData = [
   }
 ]
 
-const renderStats = () => {
-  return salesData.map((item, index) => (
-    <Grid item xs={12} sm={3} key={index}>
-      <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
-        <Avatar
-          variant='rounded'
-          sx={{
-            mr: 3,
-            width: 44,
-            height: 44,
-            boxShadow: 3,
-            color: 'common.white',
-            backgroundColor: `${item.color}.main`
-          }}
-        >
-          {item.icon}
-        </Avatar>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Typography variant='caption'>{item.title}</Typography>
-          <Typography variant='h6'>{item.stats}</Typography>
-        </Box>
-      </Box>
-    </Grid>
-  ))
-}
+const RenderStats = ({ responseData }) => {
+  console.log('responseData', responseData)
+  return (
+    <div className='flex gap-12'>
+        <div className='flex'>
+          <Avatar
+            variant='rounded'
+            sx={{
+              mr: 3,
+              width: 44,
+              height: 44,
+              boxShadow: 3,
+              color: 'black',
+              backgroundColor: `primary`
+            }}
+          >
+            <TrendingUp sx={{ fontSize: '1.75rem' }} />
+          </Avatar>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography variant='caption'>Model</Typography>
+            <Typography variant='h6'>{responseData?.data?.model}</Typography>
+          </Box>
+        </div>
+        <div className='flex'>
+          <Avatar
+            variant='rounded'
+            sx={{
+              mr: 3,
+              width: 44,
+              height: 44,
+              boxShadow: 3,
+              color: 'black',
+              backgroundColor: `primary`
+            }}
+          >
+            <TrendingUp sx={{ fontSize: '1.75rem' }} />
+          </Avatar>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography variant='caption'>Registered Number</Typography>
+            <Typography variant='h6'>{responseData?.data?.registration_number}</Typography>
+          </Box>
+        </div>
+        <div className='flex'>
+          <Avatar
+            variant='rounded'
+            sx={{
+              mr: 3,
+              width: 44,
+              height: 44,
+              boxShadow: 3,
+              color: 'black',
+              backgroundColor: `primary`
+            }}
+          >
+            <TrendingUp sx={{ fontSize: '1.75rem' }} />
+          </Avatar>
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Typography variant='caption'>Belongs to</Typography>
+            <Typography variant='h6'>organization {responseData?.data?.organization}</Typography>
+          </Box>
+        </div>
+    </div>
+  );
+};
 
-const StatisticsCard = () => {
+
+const StatisticsCard = ({ responseData }) => {
   return (
     <Card>
       <CardHeader
-        title='Statistics Card'
+        title='About Vehicle'
         action={
           <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
+            {/* <DotsVertical /> */}
           </IconButton>
         }
         subheader={
           <Typography variant='body2'>
             <Box component='span' sx={{ fontWeight: 600, color: 'text.primary' }}>
-              Total 48.5% growth
-            </Box>{' '}
-            😎 this month
+              Detailed Information of Vehicle
+            </Box>
           </Typography>
         }
         titleTypographyProps={{
@@ -96,7 +135,7 @@ const StatisticsCard = () => {
       />
       <CardContent sx={{ pt: theme => `${theme.spacing(3)} !important` }}>
         <Grid container spacing={[5, 0]}>
-          {renderStats()}
+          <RenderStats responseData={responseData} />
         </Grid>
       </CardContent>
     </Card>

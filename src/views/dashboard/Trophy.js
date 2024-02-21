@@ -35,7 +35,7 @@ const Trophy = ({ responseData }) => {
         </Typography>
         <Typography variant='h6' sx={{ my: 4 }}>
           Registration Number : <br></br>{responseData?.data?.registration_number}
-        </Typography>
+        </Typography>   
         {/* <Button size='small' variant='contained'>
           View Sales
         </Button> */}
